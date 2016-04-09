@@ -1,0 +1,34 @@
+﻿@model CarambaOpen.ViewModels.ResultsViewModel
+@{
+    ViewData["Title"] = "Dina resultat";
+    var pollNo = 1;
+}
+
+<h4>Sjukt ointressanta resultat nedan eftersom du precis matat in det. Klicka <a asp-action="Rank" ><strong style="color:firebrick">här</strong></a> för att se den lite intressantare rankingen.</h4>
+<br/>
+<br />
+@foreach (var poll in Model.Polls)
+{
+    <h3>Muppen <strong>@Model.UserName</strong> har svarat följande på undersökning @pollNo</h3>
+    <br/>
+    foreach (var answer in poll.Answers)
+    {
+        <h4>@answer.Question.Quest</h4>
+        <div class="form-group">
+            <label>@answer.Question.Alt1</label>
+            <span class="form-control">@answer.Alt1</span>
+        </div>
+        <div class="form-group">
+            <label>@answer.Question.Alt2</label>
+            <span class="form-control">@answer.Alt2</span>
+        </div>
+        <div class="form-group">
+            <label>@answer.Question.Alt3</label>
+            <span class="form-control">@answer.Alt3</span>
+        </div>
+        <div class="form-group">
+            <label>@answer.Question.Alt4</label>
+            <span class="form-control">@answer.Alt4</span>
+        </div>
+    }
+}

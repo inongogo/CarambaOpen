@@ -1,0 +1,41 @@
+﻿@using System.Threading.Tasks
+@using CarambaOpen.Models
+@model IList<CarambaOpen.Models.Ranking>
+@{
+    ViewData["Title"] = "Visa undersökningsresultaten";
+}
+
+<h3>Sammanställning av allas ranking</h3>
+
+
+<table class="table table-striped table-hover table-responsive, table-bordered">
+    <thead>
+        <tr>
+            <th>Vem</th>
+            <th>Snålhet</th>
+            <th>Golf</th>
+            <th>Mat, drick, party</th>
+            <th>Väder</th>
+            <th>Boende</th>
+            <th>Resmål</th>
+            <th>Socialt</th>
+            <th>Risk</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Model)
+        {
+            <tr>
+                <td>@row.User.Name</td>
+                <td>@row.Cheapness</td>
+                <td>@row.Golf</td>
+                <td>@row.FoodDrinkAndParty</td>
+                <td>@row.Weather</td>
+                <td>@row.Living</td>
+                <td>@row.Country</td>
+                <td>@row.Social</td>
+                <td>@row.Risk</td>
+            </tr>
+        }
+    </tbody>
+</table>

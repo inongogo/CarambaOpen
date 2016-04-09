@@ -1,0 +1,81 @@
+﻿@model IList<CarambaOpen.Models.Destination>
+@{
+    ViewData["Title"] = "Resmål";
+}
+
+<h1>Några resmålsval</h1>
+<br/>
+@foreach (var dest in @Model)
+{
+    <br />
+    <h3 style="color:firebrick">@dest.DestinationCountry - @dest.DestinationCity</h3>
+    <div class="form-group">
+        <label>Kostnad hyrbil</label>
+        <span class="form-control">@dest.CarRentalCost</span>
+    </div>
+    <div class="form-group">
+        <label>Uppskaddad kostnad för mat/dricka</label>
+        <span class="form-control">@dest.FoodDrinkCost</span>
+    </div>
+    <div class="form-group">
+        <label>Namn på boende</label>
+        <span class="form-control">@dest.HotellName</span>
+    </div>
+    <div class="form-group">
+        <label>Typ av boende</label>
+        <span class="form-control">@dest.LivingType</span>
+    </div>
+    <div class="form-group">
+        <label>Boendets hemsida</label>
+        <span class="form-control"><a href="@dest.HotellUrl">@dest.HotellUrl</a></span>
+    </div>
+    <div class="form-group">
+        <label>Kostnad boende</label>
+        <span class="form-control">@dest.LivingCost</span>
+    </div>
+    <div class="form-group">
+        <label>Färdmedel till resmålet</label>
+        <span class="form-control">@dest.TravelType"</span>
+    </div>
+    <div class="form-group">
+        <label>Kostnad för resa</label>
+        <span class="form-control">@dest.TravelCost"</span>
+    </div>
+    <div class="form-group">
+        <label>Golfklubb 1</label>
+        <span class="form-control">@dest.GolfClub1Name"</span>
+    </div>
+    <div class="form-group">
+        <label>Hemsida till Golfklubb 1</label>
+        <span class="form-control">@dest.GolfClub1Url"</span>
+    </div>
+    <div class="form-group">
+        <label>Golfklubb 2</label>
+        <span class="form-control">@dest.GolfClub2Name"</span>
+    </div>
+    <div class="form-group">
+        <label>Hemsida till Golfklubb 2</label>
+        <span class="form-control">@dest.GolfClub2Url"</span>
+    </div>
+    <div class="form-group">
+        <label>Golfklubb 1</label>
+        <span class="form-control">@dest.GolfClub3Name"</span>
+    </div>
+    <div class="form-group">
+        <label>Hemsida till Golfklubb 3</label>
+        <span class="form-control">@dest.GolfClub3Url"</span>
+    </div>
+    <div class="form-group">
+        <label>Kostnad per golfrunda (ca)</label>
+        <span class="form-control">@dest.GolfCost"</span>
+    </div>
+    <div class="form-group">
+        <label>Fördelar</label>
+        <span class="form-control">@dest.Pros"</span>
+    </div>
+    <div class="form-group">
+        <label>Nackdelar</label>
+        <span class="form-control">@dest.Cons"</span>
+    </div>
+
+}

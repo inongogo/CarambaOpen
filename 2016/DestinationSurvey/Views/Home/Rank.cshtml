@@ -1,0 +1,48 @@
+﻿@using CarambaOpen.Models
+@model CarambaOpen.Models.Ranking
+@{
+    ViewData["Title"] = "Din ranking";
+}
+
+@if (@Model != null)
+{
+    <h3>Så här har min enormt avancerade viktighets-algoritm räknat ut dina prioriteringar (faktiskt sjukt avancerad)</h3>
+    <div class="form-group">
+        <label asp-for="Cheapness">Snålhet (lågt är bra)</label>
+        <span class="form-control" asp-for="Cheapness">@Model.Cheapness</span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Golf">Golf</label>
+        <span class="form-control" asp-for="Golf">@Model.Golf</span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Weather">Väder</label>
+        <span class="form-control" asp-for="Weather">@Model.Weather</span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Living">Boende:</label>
+        <span class="form-control" asp-for="Living">@Model.Living</span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FoodDrinkAndParty">Mat, dricka och festande:</label>
+        <span class="form-control" asp-for="FoodDrinkAndParty">@Model.FoodDrinkAndParty</span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Country">Destination (land):</label>
+        <span class="form-control" asp-for="Country">@Model.Country</span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Social">Social stimulans:</label>
+        <span class="form-control" asp-for="Social">@Model.Social</span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Risk">Riskbenägenhet:</label>
+        <span class="form-control" asp-for="Risk">@Model.Risk</span>
+    </div>
+
+    <h3>Har du ledsnat på din ranking kan du alltid klicka <a asp-action="Destinations"><strong style="color:firebrick">här</strong></a> för att se de olika förslagen på resmål som jag kommit fram till.</h3>
+}
+else
+{
+    <h2 class="text-center">Det finns ingen ranking!</h2>
+}
